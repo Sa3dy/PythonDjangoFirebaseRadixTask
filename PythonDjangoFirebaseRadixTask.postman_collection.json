@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user\": {\r\n        \"email\": \"test64523@mail.com\",\r\n        \"username\": \"test294\",\r\n        \"password\": \"12345678\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"user\": {\r\n        \"email\": \"test17@mail.com\",\r\n        \"name\": \"test17\",\r\n        \"phone\": \"0111111111\",\r\n        \"password\": \"12345678\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user\": {\r\n        \"email\": \"test64523@mail.com\",\r\n        \"password\": \"12345678\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"user\": {\r\n        \"email\": \"test@mail.com\",\r\n        \"password\": \"12345678\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -74,7 +74,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzAyOTEyNjkyfQ.K4UsUJ3A4Nqunln-hij6yCaU9U4GE6uQDhQJ8F9M6Xg",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiODdlMzM3LTE1ZWYtNDMzZS04Mzk5LTg1MmUzNzFiODgwNSIsImV4cCI6MTcwMzI1MjQ4MX0.SuWtzxuzrfQMWdZyC5YPfFAAGlYSE1Seln_X157nia0",
 							"type": "string"
 						}
 					]

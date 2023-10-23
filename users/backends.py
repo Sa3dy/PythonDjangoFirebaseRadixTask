@@ -3,8 +3,11 @@ import jwt
 from django.conf import settings
 
 from rest_framework import authentication, exceptions
+import firebase_admin
+import google.cloud
+from firebase_admin import credentials, firestore
 
-from .models import User
+db = firestore.client()
 
 class JWTAuthentication(authentication.BaseAuthentication):
     authentication_header_prefix = 'Bearer'
@@ -38,15 +41,14 @@ class JWTAuthentication(authentication.BaseAuthentication):
         except:
             msg = 'Invalid authentication. Could not decode token.'
             raise exceptions.AuthenticationFailed(msg)
+        
+        user_doc_ref = db.collection("users")
+        user_docs = user_doc_ref.where("id", '==', payload['id']).get()
 
-        try:
-            user = User.objects.get(pk=payload['id'])
-        except User.DoesNotExist:
+        if not len(user_docs) > 0:
             msg = 'No user matching this token was found.'
             raise exceptions.AuthenticationFailed(msg)
+        
+        user_doc = user_docs[0].to_dict()
 
-        if not user.is_active:
-            msg = 'This user has been deactivated.'
-            raise exceptions.AuthenticationFailed(msg)
-
-        return (user, token)
+        return (user_doc, token)

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from datetime import timedelta
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -156,3 +157,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+import firebase_admin
+import google.cloud
+from firebase_admin import credentials, firestore
+
+ROOT_DIR = os.path.abspath(os.curdir)
+cred = credentials.Certificate(ROOT_DIR + "\\credentials\\serviceAccount.json")
+app = firebase_admin.initialize_app(cred)
